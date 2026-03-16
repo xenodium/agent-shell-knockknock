@@ -1,0 +1,18 @@
+#+TITLE: agent-shell-knockknock
+
+Get [[https://github.com/konrad1977/knockknock][knockknock]] agent-shell notifications when your attention is elsewhere.
+
+[[file:screenshot.png]]
+
+* Requirements
+
+- [[https://github.com/xenodium/agent-shell][agent-shell]]
+- [[https://github.com/konrad1977/knockknock][knockknock]]
+
+* Install / setup
+
+#+begin_src emacs-lisp
+  (use-package agent-shell-knockknock
+    :after (agent-shell knockknock)
+    :hook (agent-shell-mode . agent-shell-knockknock-mode))
+#+end_src
