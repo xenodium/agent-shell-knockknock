@@ -1,6 +1,6 @@
 #+TITLE: agent-shell-knockknock
 
-Get [[https://github.com/konrad1977/knockknock][knockknock]] agent-shell notifications when your attention is elsewhere.
+Get [[https://github.com/konrad1977/knockknock][knockknock]] [[https://github.com/xenodium/agent-shell-knockknock/tree/main][agent-shell]] notifications when your attention is elsewhere.
 
 [[file:screenshot.png]]
 
