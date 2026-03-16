@@ -9,7 +9,7 @@ Get [[https://github.com/konrad1977/knockknock][knockknock]] [[https://github.co
 * Requirements
 
 - [[https://github.com/xenodium/agent-shell][agent-shell]]
-- [[https://github.com/konrad1977/knockknock][knockknock]]
+- [[https://github.com/konrad1977/knockknock][knockknock]] *(with [[https://github.com/konrad1977/knockknock/pull/4][PR #4]])*
 
 * Install / setup
 
