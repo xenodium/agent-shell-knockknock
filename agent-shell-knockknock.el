@@ -46,18 +46,29 @@
               (icon-name (map-nested-elt state '(:agent-config :icon-name))))
     (agent-shell--fetch-agent-icon icon-name)))
 
+(defun agent-shell-knockknock--strip-kind-prefix (text kind)
+  "Strip KIND prefix from TEXT to avoid redundancy.
+For example, \"Edit README.org\" with kind \"edit\" becomes \"README.org\"."
+  (if (and kind text
+           (string-match-p (concat "\\`" (regexp-quote kind) " ")
+                           (downcase text)))
+      (string-trim (substring text (length kind)))
+    text))
+
 (defun agent-shell-knockknock--format-permission-message (tool-call)
   "Format a user-friendly message from TOOL-CALL."
-  (let ((title (map-elt tool-call :title)))
+  (let ((stripped (agent-shell-knockknock--strip-kind-prefix
+                   (map-elt tool-call :title)
+                   (map-elt tool-call :kind))))
     (pcase (map-elt tool-call :kind)
       ((or "read" "edit" "write" "delete" "move")
-       (agent-shell--shorten-paths title))
+       (agent-shell--shorten-paths stripped))
       ((or "execute" "search" "fetch")
-       (let ((first-line (car (split-string title "\n"))))
+       (let ((first-line (car (split-string stripped "\n"))))
          (if (> (length first-line) 50)
              (concat (substring first-line 0 47) "...")
            first-line)))
-      (_ title))))
+      (_ stripped))))
 
 (defun agent-shell-knockknock--switch-to-shell (shell-buffer)
   "Switch to SHELL-BUFFER or its viewport and close the notification."
