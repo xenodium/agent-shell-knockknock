@@ -1,5 +1,7 @@
 #+TITLE: agent-shell-knockknock
 
+👉 [[https://github.com/sponsors/xenodium][Support this work via GitHub Sponsors]] by [[https://github.com/xenodium][@xenodium]] (check out my [[https://xenodium.com][blog]])
+
 Get [[https://github.com/konrad1977/knockknock][knockknock]] [[https://github.com/xenodium/agent-shell-knockknock/tree/main][agent-shell]] notifications when your attention is elsewhere.
 
 [[file:screenshot.png]]
