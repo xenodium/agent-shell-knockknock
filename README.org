@@ -15,6 +15,8 @@ Get [[https://github.com/konrad1977/knockknock][knockknock]] [[https://github.co
 
 #+begin_src emacs-lisp
   (use-package agent-shell-knockknock
+    :vc (:url "https://github.com/xenodium/agent-shell-knockknock"
+         :rev :newest)
     :after (agent-shell knockknock)
     :hook (agent-shell-mode . agent-shell-knockknock-mode))
 #+end_src
